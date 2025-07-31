@@ -1,15 +1,19 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import Sidebar from './components/Layout/Sidebar';
+import Header from './components/Layout/Header';
+import Dashboard from './pages/Dashboard';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div className="text-9xl text-red-500">HI</div>
-    </>
+    <div className="flex h-screen bg-gray-100">
+      <Sidebar />
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <Header />
+        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
+          <Dashboard />
+        </main>
+      </div>
+    </div>
   );
 }
 
